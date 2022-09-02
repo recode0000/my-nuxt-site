@@ -1,5 +1,5 @@
 <template>
-  <Tutorial />
+  <nuxt-link to="./about">Aboutページにいく</nuxt-link>
 </template>
 
 <script>
