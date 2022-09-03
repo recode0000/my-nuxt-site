@@ -1,11 +1,11 @@
 <template>
   <div>
-    <nuxt-link to="./">TOP</nuxt-link>
+    <h1 class="-title">
+      <page-title label="ABOUT" />
+    </h1>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'AboutPage'
-}
-</script>
+<style lang="scss" scoped>
+
+</style>
