@@ -29,27 +29,7 @@
         </h2>
       </div>
       <div class="section__main">
-        <div class="section__newsList">
-          <div
-            v-for="(post, index) in posts"
-            :key="`post-${index}`"
-            class="section__newsList__item card"
-          >
-            <nuxt-link :to="`/news/posts/${post.id}`" class="card__link">
-              <p class="card__date">
-                {{ post.date }}
-              </p>
-              <p class="card__title">
-                {{ post.title }}
-              </p>
-            </nuxt-link>
-          </div>
-        </div>
-        <div class="section__link">
-          <nuxt-link to="/news" class="-link">
-            お知らせ一覧へ
-          </nuxt-link>
-        </div>
+        <news-list :list="posts" />
       </div>
     </section>
     <!-- news -->
@@ -103,17 +83,6 @@ export default {
   &__main {
     margin-top: 16px;
   }
-  &__description {
-  }
-  &__newsList {
-    &__item {
-      margin: 8px 0;
-      padding-top: 8px;
-      & + & {
-        border-top: 2px dashed $colorBorder;
-      }
-    }
-  }
 }
 .-item {
   & + & {
@@ -130,34 +99,6 @@ export default {
   &:hover {
     background-color: $colorCorporateMain;
     color: $colorWhite;
-  }
-}
-// お知らせカード
-.card {
-  &__link {
-    padding: 8px 16px;
-    display: flex;
-    align-items: center;
-    column-gap: 16px;
-    transition: all 0.3s;
-    @media #{$sp} {
-      flex-direction: column;
-      align-items: flex-start;
-      row-gap: 8px;
-    }
-    &:hover {
-      background-color: $colorCorporateMain;
-      .card__date,
-      .card__title {
-        color: $colorWhite;
-      }
-    }
-  }
-  &__date {
-  }
-  &__title {
-    font-weight: bold;
-    font-size: 1.8rem;
   }
 }
 </style>

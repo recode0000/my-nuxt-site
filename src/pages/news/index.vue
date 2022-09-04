@@ -1,24 +1,7 @@
 <template>
   <div>
-    <h1 class="-title">
-      <page-title label="NEWS" />
-    </h1>
-    <div class="list">
-      <div
-        v-for="(post, index) in posts"
-        :key="`post-${index}`"
-        class="list__item card"
-      >
-        <nuxt-link :to="`/news/posts/${post.id}`" class="card__link">
-          <p class="card__date">
-            {{ post.date }}
-          </p>
-          <p class="card__title">
-            {{ post.title }}
-          </p>
-        </nuxt-link>
-      </div>
-    </div>
+    <page-title label="NEWS" />
+    <news-list :list="posts" />
   </div>
 </template>
 
